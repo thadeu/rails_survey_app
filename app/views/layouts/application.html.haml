@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{name: "keywords", content: "questions, survey, answers"}
+    %meta{name: "description", content: "Survey"}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    - if content_for?(:title)
+      %title= yield :title
+    - else
+      %title
+        Survey
+    
+    %link{ :href => "https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css", :media => "screen", :rel => "stylesheet" }
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    
+  %body{id: controller.controller_name, class: ''}
+    = render 'layouts/alerts_and_notices'
+    = yield
+
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application'

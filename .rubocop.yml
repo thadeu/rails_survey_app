@@ -1,0 +1,34 @@
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 140
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/MethodLength:
+  Max: 15
+
+Layout/IndentArray:
+  Enabled: false
+
+Layout/IndentHash:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'spec/factories/*.rb'
+  TargetRubyVersion: 2.3
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+   '%i': '[]' 

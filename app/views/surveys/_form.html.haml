@@ -1,0 +1,25 @@
+= form_for @survey, html: { class: 'w-100' } do |f|
+  .columns
+    .column
+      .panel
+        .panel-heading
+          New survey
+        .panel-block
+          .field.w-100
+            = f.label :name
+            .control
+              = f.text_field :name, class: 'input'
+          
+        .panel-block
+          .control
+            = button_tag class: 'button is-link', data: { disable_with: 'Saving' } do
+              Save me
+    .column
+      .panel
+        .panel-heading
+          Create many Questions
+          = link_to_add_association 'Add Question', f, :questions, class: 'add_questions'
+
+        = f.fields_for :questions do |question|
+          = render 'question_fields', f: question
+    

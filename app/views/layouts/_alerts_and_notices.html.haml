@@ -1,0 +1,7 @@
+- if alert || notice
+  .message.is-link
+    .message-body
+      - if alert.present?
+        = alert
+      - elsif notice.present?
+        = notice

@@ -1,0 +1,18 @@
+.panel-block.column
+  .columns
+    .column
+      .field
+        = f.label :content, 'Question'
+        .control
+          = f.text_area :content, rows: 3, class: 'textarea'
+          = f.check_box :_destroy
+          = f.label :_destroy, 'Remove Question'
+  .columns
+    .column
+      = link_to_add_association 'Add answer', f, :answers
+  
+  .columns
+    .nested-form
+      = f.fields_for :answers do |answer|
+        = render 'answer_fields', f: answer
+        

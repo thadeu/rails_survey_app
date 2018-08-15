@@ -1,0 +1,7 @@
+.column.nested-fields
+  .control
+    = f.label :content, 'Answer'
+    = f.text_field :content, class: 'input'
+    = f.hidden_field :_destroy
+  = link_to 'remove', '#', class: 'remove_fields'
+        
